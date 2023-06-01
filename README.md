@@ -1,5 +1,5 @@
 # ebiGO
-## v1.0.0
+## v1.1.0
 ###
 #### Automatización del sitio web de desarrollo para pruebas
 #### https://dev.bowtietech.pro/dev/Ebigo/#/
