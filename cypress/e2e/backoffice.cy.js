@@ -72,8 +72,13 @@ describe("Conjunto de pruebas para BackOffice - ebiGO - v1.0.0", () => {
         cy.get('.swal2-popup').contains("Datos no válidos o faltantes");
         cy.get('.swal2-confirm').click();
         cy.get('[icon="fas fa-pencil-ruler"] > .animate__animated > .titleCards').click();
+<<<<<<< HEAD
         cy.get('#new-Nombre').type("Prueba");
         cy.get('#new-Ubicación').type("Cypress Automatización");
+=======
+        cy.get('#new-Nombre').type(prompt("Nombre Local"));
+        cy.get('#new-Ubicación').type(prompt("Ubicación Local"));
+>>>>>>> 7c9315ad771b690a377c78e99699fee259ab6c3d
         cy.get('.btn').click();
         cy.get(':nth-child(1) > .text-center > .buttonRowEdit').click();
         cy.get('.btn-info').click();
@@ -146,7 +151,45 @@ describe("Conjunto de pruebas para BackOffice - ebiGO - v1.0.0", () => {
 
     //CORTESÍAS SE DEBEN PROBAR DE MANERA MANUAL
 
+<<<<<<< HEAD
     it.only("Validar parqueos", () => {
+=======
+    //PRUEBA EN LOS MODULOS DE CORTESÍA
+    it("Pruebas de cortesías", () => {
+        cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
+        cy.viewport(1250, 700);
+        cy.get('img').should("be.visible");
+        cy.get('.mb-1 > .form-control').type("drivas@ebigo.com.gt");
+        cy.get('.form-group.mb-4 > .form-control').type("Ebi2022*");
+        cy.get('.btn').click();
+        cy.get(':nth-child(3) > .nav-link').click();
+        cy.get('.text-center > .btn').click();
+        cy.get('#swal2-title').contains("Datos faltantes o incorrectos");
+        cy.get(':nth-child(1) > :nth-child(7) > .btn').click();
+        cy.get('.swal2-popup').contains("Finalizado");
+        cy.get('#ngb-nav-6').click();
+        cy.get('.d-grid > .btn').click();
+        cy.get('.swal2-popup').contains("Datos faltantes o incorrectos");
+        cy.get('.swal2-confirm').click();
+        cy.get('.btn-primary').click();
+        cy.get('.d-flex > .btn').click();
+        cy.get('.swal2-popup').contains("Datos incorrectos o faltantes.");
+        cy.get(':nth-child(1) > :nth-child(5) > .buttonRowEdit > .fas').click();
+        cy.get('.d-flex > .m-1').click();
+        cy.get('.btn-close').click();
+        cy.get('.btn-primary').click();
+        cy.get(':nth-child(1) > :nth-child(5) > .buttonRowEdit > .fas').click();
+        cy.get('.ng-submitted > .d-flex > :nth-child(1)').click();
+        cy.get(':nth-child(1) > :nth-child(5) > .buttonRowDelete').click();
+        cy.get('#new-Nombre').type(prompt("Nombre antena estacionaria"));
+        cy.get('#new-Mac').type(prompt("MAC antena estacionaria"));
+        cy.get('#new-Antena').type(prompt("UUID antena estacionaria"));
+        cy.get('.d-flex > .btn').click();
+        cy.get('.btn-close').click();
+    });
+
+    it("Validar módulo parqueo y aplicación de cortesías", () => {
+>>>>>>> 7c9315ad771b690a377c78e99699fee259ab6c3d
         //NO TODOS LOS DATOS SE PUEDEN PROBAR PORQUE SE NECESITA INTERACCIÓN HUMANA
         //AGREGANDO DIFERENTES IMÁGENES ETC
         cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
@@ -176,4 +219,148 @@ describe("Conjunto de pruebas para BackOffice - ebiGO - v1.0.0", () => {
         cy.get('.btn-close').click();
     });
 
+<<<<<<< HEAD
+=======
+
+    it("Validar Ver parqueos mensuales", () => {
+        cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
+        cy.viewport(1250, 700);
+        cy.get('img').should("be.visible");
+        cy.get('.mb-1 > .form-control').type("drivas@ebigo.com.gt");
+        cy.get('.form-group.mb-4 > .form-control').type("Ebi2022*");
+        cy.get('.btn').click();
+        cy.get('#ngb-nav-2').click();
+        cy.get(':nth-child(1) > :nth-child(10) > .buttonRowDelete').click();
+        cy.get('#swal2-title').contains("¿Está seguro que desea eliminar esta suscripción?");
+        cy.get('.swal2-deny').click();
+        cy.get(':nth-child(1) > :nth-child(10) > .buttonRowDelete').click();
+        cy.get('#swal2-title').contains("¿Está seguro que desea eliminar esta suscripción?");
+        cy.get('.swal2-confirm').click();
+        cy.get('.swal2-popup').contains("Finalizado");
+        cy.get('#ngb-nav-3').click();
+        cy.get('#ngb-nav-2').click();
+    });
+
+    it("Validar crear parqueos mensuales", () => {
+
+        let numeroTelefonoBuscar = "45024363";
+        let cobroParqueoMensual = "0";
+
+        cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
+        cy.viewport(1250, 700);
+        cy.get('img').should("be.visible");
+        cy.get('.mb-1 > .form-control').type("drivas@ebigo.com.gt");
+        cy.get('.form-group.mb-4 > .form-control').type("Ebi2022*");
+        cy.get('.btn').click();
+        cy.get('#ngb-nav-3').click();
+        cy.get('.text-center > .btn').click();
+        cy.get('#swal2-title').contains("Hacen falta datos o son inválidos.");
+        cy.get('.swal2-confirm').click();
+        cy.get('.col-xl-6 > .input-group > button').click();
+        cy.get('.input-group-sm > .inputClass').type(numeroTelefonoBuscar);
+
+        //SE USA MÉTODO ONCHANGE PARA BUSCAR EL NUMERO DE TELÉFONO
+        cy.get('.input-group-sm > .inputClass').trigger('change', { force: true });
+        cy.get('.position-absolute').click();
+        cy.get('.position-absolute').click();
+        cy.get('.swal2-popup').contains("Seleccionado");
+        cy.get(':nth-child(2) > .opcionActivo > :nth-child(1) > label').click();
+
+        //HACER CLICK EN TODOS LOS DIAS PARA SU ENTRADA
+        cy.get('.col-xl-12 > .opcionActivo > :nth-child(1) > label').click();
+        cy.get('.col-xl-12 > .opcionActivo > :nth-child(2) > label').click();
+        cy.get(':nth-child(3) > label').click();
+        cy.get(':nth-child(4) > label').click();
+        cy.get(':nth-child(5) > label').click();
+        cy.get(':nth-child(6) > label').click();
+        cy.get(':nth-child(7) > label').click();
+        cy.get('.form-select').select("20");
+        cy.get('.relative > .form-control').type(cobroParqueoMensual);
+        cy.get(':nth-child(7) > .opcionActivo > :nth-child(1) > label').click();
+        cy.get('.text-center > .btn').click();
+
+        //CON FECHA Y CON COBRO RECURRENTE
+
+        cy.get('.col-xl-6 > .input-group > button').click();
+        cy.get('.input-group-sm > .inputClass').type(numeroTelefonoBuscar);
+
+        //SE USA MÉTODO ONCHANGE PARA BUSCAR EL NUMERO DE TELÉFONO
+        cy.get('.input-group-sm > .inputClass').trigger('change', { force: true });
+        cy.get('.position-absolute').click();
+        cy.get('.position-absolute').click();
+        cy.get('.swal2-popup').contains("Seleccionado");
+        cy.get(':nth-child(2) > .opcionActivo > :nth-child(2) > label').click();
+
+        //HACER CLICK EN TODOS LOS DIAS PARA SU ENTRADA
+        cy.get('.col-xl-12 > .opcionActivo > :nth-child(1) > label').click();
+        cy.get('.col-xl-12 > .opcionActivo > :nth-child(2) > label').click();
+        cy.get(':nth-child(3) > label').click();
+        cy.get(':nth-child(4) > label').click();
+        cy.get(':nth-child(5) > label').click();
+        cy.get(':nth-child(6) > label').click();
+        cy.get(':nth-child(7) > label').click();
+        cy.get('.form-select').select("20");
+        cy.get('.relative > .form-control').type(cobroParqueoMensual);
+        cy.get(':nth-child(7) > .opcionActivo > .m-1 > label').click();
+        cy.get('.text-center > .btn').click();
+    });
+
+    it("Validar Antenas de Parqueo", () => {
+        cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
+        cy.viewport(1250, 700);
+        cy.get('img').should("be.visible");
+        cy.get('.mb-1 > .form-control').type("drivas@ebigo.com.gt");
+        cy.get('.form-group.mb-4 > .form-control').type("Ebi2022*");
+        cy.get('.btn').click();
+        cy.get('.active > .nav-link').click();
+        cy.get('#ngb-nav-4').click();
+        cy.get('.form-check-label').click();
+        cy.get('.form-check-label').click();
+        cy.get('.btn').click();
+        cy.get('#swal2-title').contains("¡Cuidado!");
+        cy.get(':nth-child(1) > :nth-child(9) > .buttonRowEdit').click();
+        cy.get('.row > .d-flex > :nth-child(2)').click();
+        cy.get('#ngb-nav-3').click();
+        cy.get('#ngb-nav-4').click();
+        cy.get(':nth-child(1) > :nth-child(9) > .buttonRowQR').click();
+    });
+
+    it("Validar enviar mensajes opción soporte", () => {
+        cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
+        cy.viewport(1250, 700);
+        cy.get('img').should("be.visible");
+        cy.get('.mb-1 > .form-control').type("drivas@ebigo.com.gt");
+        cy.get('.form-group.mb-4 > .form-control').type("Ebi2022*");
+        cy.get('.btn').click();
+        cy.get(':nth-child(6) > .nav-link').click();
+        cy.get('#new-Asunto').type("Pruebas Automatizadas");
+        cy.get('.ng-dirty > .inputClass').type("Pruebas Automatizadas");
+        cy.get('.btn').click();
+        cy.get('.swal2-popup').contains("Se ha enviado su petición");
+        cy.get('.swal2-confirm').click();
+        cy.get('.nav > :nth-child(1) > .nav-link').click();
+        cy.get(':nth-child(1) > :nth-child(9) > .buttonRowDelete').click();
+        cy.get('#ngb-nav-3').click();
+        cy.get('#ngb-nav-4').click();
+    });
+
+    it("Validar enviar mensajes opción soporte", () => {
+        cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
+        cy.viewport(1250, 700);
+        cy.get('img').should("be.visible");
+        cy.get('.mb-1 > .form-control').type("drivas@ebigo.com.gt");
+        cy.get('.form-group.mb-4 > .form-control').type("Ebi2022*");
+        cy.get('.btn').click();
+        cy.get(':nth-child(6) > .nav-link').click();
+        cy.get('#ngb-nav-6').click();
+        cy.get('#new-Teléfono').type("45024363");
+        cy.get('#new-Teléfono').click();
+        cy.get('.nav > :nth-child(1) > .nav-link').click();
+    });
+
+    it("PRUEBAS FINALIZADAS CON ÉXITO", ()=>{
+        alert("Pruebas completadas con éxito");
+    });
+
+>>>>>>> 7c9315ad771b690a377c78e99699fee259ab6c3d
 });
