@@ -146,6 +146,40 @@ describe("Conjunto de pruebas para BackOffice - ebiGO - v1.0.0", () => {
 
     //CORTESÍAS SE DEBEN PROBAR DE MANERA MANUAL
 
+    //PRUEBA EN LOS MODULOS DE CORTESÍA
+    it("Pruebas de cortesías", () => {
+        cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
+        cy.viewport(1250, 700);
+        cy.get('img').should("be.visible");
+        cy.get('.mb-1 > .form-control').type("drivas@ebigo.com.gt");
+        cy.get('.form-group.mb-4 > .form-control').type("Ebi2022*");
+        cy.get('.btn').click();
+        cy.get(':nth-child(3) > .nav-link').click();
+        cy.get('.text-center > .btn').click();
+        cy.get('#swal2-title').contains("Datos faltantes o incorrectos");
+        cy.get(':nth-child(1) > :nth-child(7) > .btn').click();
+        cy.get('.swal2-popup').contains("Finalizado");
+        cy.get('#ngb-nav-6').click();
+        cy.get('.d-grid > .btn').click();
+        cy.get('.swal2-popup').contains("Datos faltantes o incorrectos");
+        cy.get('.swal2-confirm').click();
+        cy.get('.btn-primary').click();
+        cy.get('.d-flex > .btn').click();
+        cy.get('.swal2-popup').contains("Datos incorrectos o faltantes.");
+        cy.get(':nth-child(1) > :nth-child(5) > .buttonRowEdit > .fas').click();
+        cy.get('.d-flex > .m-1').click();
+        cy.get('.btn-close').click();
+        cy.get('.btn-primary').click();
+        cy.get(':nth-child(1) > :nth-child(5) > .buttonRowEdit > .fas').click();
+        cy.get('.ng-submitted > .d-flex > :nth-child(1)').click();
+        cy.get(':nth-child(1) > :nth-child(5) > .buttonRowDelete').click();
+        cy.get('#new-Nombre').type(prompt("Nombre antena estacionaria"));
+        cy.get('#new-Mac').type(prompt("MAC antena estacionaria"));
+        cy.get('#new-Antena').type(prompt("UUID antena estacionaria"));
+        cy.get('.d-flex > .btn').click();
+        cy.get('.btn-close').click();
+    });
+
     it("Validar módulo parqueo y aplicación de cortesías", () => {
         //NO TODOS LOS DATOS SE PUEDEN PROBAR PORQUE SE NECESITA INTERACCIÓN HUMANA
         //AGREGANDO DIFERENTES IMÁGENES ETC
@@ -260,6 +294,26 @@ describe("Conjunto de pruebas para BackOffice - ebiGO - v1.0.0", () => {
         cy.get('.text-center > .btn').click();
     });
 
+    it("Validar Antenas de Parqueo", () => {
+        cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
+        cy.viewport(1250, 700);
+        cy.get('img').should("be.visible");
+        cy.get('.mb-1 > .form-control').type("drivas@ebigo.com.gt");
+        cy.get('.form-group.mb-4 > .form-control').type("Ebi2022*");
+        cy.get('.btn').click();
+        cy.get('.active > .nav-link').click();
+        cy.get('#ngb-nav-4').click();
+        cy.get('.form-check-label').click();
+        cy.get('.form-check-label').click();
+        cy.get('.btn').click();
+        cy.get('#swal2-title').contains("¡Cuidado!");
+        cy.get(':nth-child(1) > :nth-child(9) > .buttonRowEdit').click();
+        cy.get('.row > .d-flex > :nth-child(2)').click();
+        cy.get('#ngb-nav-3').click();
+        cy.get('#ngb-nav-4').click();
+        cy.get(':nth-child(1) > :nth-child(9) > .buttonRowQR').click();
+    });
+
     it("Validar enviar mensajes opción soporte", () => {
         cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
         cy.viewport(1250, 700);
@@ -274,6 +328,27 @@ describe("Conjunto de pruebas para BackOffice - ebiGO - v1.0.0", () => {
         cy.get('.swal2-popup').contains("Se ha enviado su petición");
         cy.get('.swal2-confirm').click();
         cy.get('.nav > :nth-child(1) > .nav-link').click();
+        cy.get(':nth-child(1) > :nth-child(9) > .buttonRowDelete').click();
+        cy.get('#ngb-nav-3').click();
+        cy.get('#ngb-nav-4').click();
+    });
+
+    it("Validar enviar mensajes opción soporte", () => {
+        cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
+        cy.viewport(1250, 700);
+        cy.get('img').should("be.visible");
+        cy.get('.mb-1 > .form-control').type("drivas@ebigo.com.gt");
+        cy.get('.form-group.mb-4 > .form-control').type("Ebi2022*");
+        cy.get('.btn').click();
+        cy.get(':nth-child(6) > .nav-link').click();
+        cy.get('#ngb-nav-6').click();
+        cy.get('#new-Teléfono').type("45024363");
+        cy.get('#new-Teléfono').click();
+        cy.get('.nav > :nth-child(1) > .nav-link').click();
+    });
+
+    it("PRUEBAS FINALIZADAS CON ÉXITO", ()=>{
+        alert("Pruebas completadas con éxito");
     });
 
 });
