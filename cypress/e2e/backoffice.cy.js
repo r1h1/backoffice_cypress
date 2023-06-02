@@ -1,12 +1,15 @@
-
 /*
 Autor: Daniel Rivas
 Fecha: 30/05/2023
 */
+
+//URL A LA QUE SE EJECUTARÁ EL CONJUNTO DE PRUEBAS
+var urlAProbar = 'https://dev.bowtietech.pro/Ebigo/#/';
+
 describe("Conjunto de pruebas para BackOffice - ebiGO - v1.0.0", () => {
 
     it("Inicio de sesión", () => {
-        cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
+        cy.visit(urlAProbar);
         cy.viewport(1250, 700);
         cy.get('img').should("be.visible");
         cy.get('.mb-1 > .form-control').type("drivas@ebigo.com.gt");
@@ -18,7 +21,7 @@ describe("Conjunto de pruebas para BackOffice - ebiGO - v1.0.0", () => {
     //CERRAR SESIÓN NO SE PUEDE AUTOMATIZAR
 
     it("Recuperación de contraseña", () => {
-        cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
+        cy.visit(urlAProbar);
         cy.get('u').click();
         cy.get('.form-control').type("drivas@ebigo.com.gt");
         cy.get('.btn').click();
@@ -26,7 +29,7 @@ describe("Conjunto de pruebas para BackOffice - ebiGO - v1.0.0", () => {
     });
 
     it("Probar métricas de flujo de dinero y flujo de efectivo", () => {
-        cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
+        cy.visit(urlAProbar);
         cy.viewport(1250, 700);
         cy.get('img').should("be.visible");
         cy.get('.mb-1 > .form-control').type("drivas@ebigo.com.gt");
@@ -39,7 +42,7 @@ describe("Conjunto de pruebas para BackOffice - ebiGO - v1.0.0", () => {
     });
 
     it("Validar opciones de administrador", () => {
-        cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
+        cy.visit(urlAProbar);
         cy.viewport(1250, 700);
         cy.get('img').should("be.visible");
         cy.get('.mb-1 > .form-control').type("drivas@ebigo.com.gt");
@@ -60,7 +63,7 @@ describe("Conjunto de pruebas para BackOffice - ebiGO - v1.0.0", () => {
     });
 
     it("Validar locales", () => {
-        cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
+        cy.visit(urlAProbar);
         cy.viewport(1250, 700);
         cy.get('img').should("be.visible");
         cy.get('.mb-1 > .form-control').type("drivas@ebigo.com.gt");
@@ -82,7 +85,7 @@ describe("Conjunto de pruebas para BackOffice - ebiGO - v1.0.0", () => {
     });
 
     it("Validar módulo prueba de tarifa", () => {
-        cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
+        cy.visit(urlAProbar);
         cy.viewport(1250, 700);
         cy.get('img').should("be.visible");
         cy.get('.mb-1 > .form-control').type("drivas@ebigo.com.gt");
@@ -97,7 +100,7 @@ describe("Conjunto de pruebas para BackOffice - ebiGO - v1.0.0", () => {
 
     it("Validar horarios", () => {
         //NO TODOS LOS DATOS SE PUEDEN PROBAR PORQUE SE NECESITA INTERACCIÓN HUMANA
-        cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
+        cy.visit(urlAProbar);
         cy.viewport(1250, 700);
         cy.get('img').should("be.visible");
         cy.get('.mb-1 > .form-control').type("drivas@ebigo.com.gt");
@@ -112,7 +115,7 @@ describe("Conjunto de pruebas para BackOffice - ebiGO - v1.0.0", () => {
 
     it("Validar facturación", () => {
         //NO TODOS LOS DATOS SE PUEDEN PROBAR PORQUE SE NECESITA INTERACCIÓN HUMANA
-        cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
+        cy.visit(urlAProbar);
         cy.viewport(1250, 700);
         cy.get('img').should("be.visible");
         cy.get('.mb-1 > .form-control').type("drivas@ebigo.com.gt");
@@ -130,7 +133,7 @@ describe("Conjunto de pruebas para BackOffice - ebiGO - v1.0.0", () => {
     it("Validar archivos", () => {
         //NO TODOS LOS DATOS SE PUEDEN PROBAR PORQUE SE NECESITA INTERACCIÓN HUMANA
         //AGREGANDO DIFERENTES IMÁGENES ETC
-        cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
+        cy.visit(urlAProbar);
         cy.viewport(1250, 700);
         cy.get('img').should("be.visible");
         cy.get('.mb-1 > .form-control').type("drivas@ebigo.com.gt");
@@ -148,7 +151,7 @@ describe("Conjunto de pruebas para BackOffice - ebiGO - v1.0.0", () => {
 
     //PRUEBA EN LOS MODULOS DE CORTESÍA
     it("Pruebas de cortesías", () => {
-        cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
+        cy.visit(urlAProbar);
         cy.viewport(1250, 700);
         cy.get('img').should("be.visible");
         cy.get('.mb-1 > .form-control').type("drivas@ebigo.com.gt");
@@ -183,7 +186,7 @@ describe("Conjunto de pruebas para BackOffice - ebiGO - v1.0.0", () => {
     it("Validar módulo parqueo y aplicación de cortesías", () => {
         //NO TODOS LOS DATOS SE PUEDEN PROBAR PORQUE SE NECESITA INTERACCIÓN HUMANA
         //AGREGANDO DIFERENTES IMÁGENES ETC
-        cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
+        cy.visit(urlAProbar);
         cy.viewport(1250, 700);
         cy.get('img').should("be.visible");
         cy.get('.mb-1 > .form-control').type("drivas@ebigo.com.gt");
@@ -212,7 +215,7 @@ describe("Conjunto de pruebas para BackOffice - ebiGO - v1.0.0", () => {
 
 
     it("Validar Ver parqueos mensuales", () => {
-        cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
+        cy.visit(urlAProbar);
         cy.viewport(1250, 700);
         cy.get('img').should("be.visible");
         cy.get('.mb-1 > .form-control').type("drivas@ebigo.com.gt");
@@ -235,7 +238,7 @@ describe("Conjunto de pruebas para BackOffice - ebiGO - v1.0.0", () => {
         let numeroTelefonoBuscar = "45024363";
         let cobroParqueoMensual = "0";
 
-        cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
+        cy.visit(urlAProbar);
         cy.viewport(1250, 700);
         cy.get('img').should("be.visible");
         cy.get('.mb-1 > .form-control').type("drivas@ebigo.com.gt");
@@ -295,7 +298,7 @@ describe("Conjunto de pruebas para BackOffice - ebiGO - v1.0.0", () => {
     });
 
     it("Validar Antenas de Parqueo", () => {
-        cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
+        cy.visit(urlAProbar);
         cy.viewport(1250, 700);
         cy.get('img').should("be.visible");
         cy.get('.mb-1 > .form-control').type("drivas@ebigo.com.gt");
@@ -315,7 +318,7 @@ describe("Conjunto de pruebas para BackOffice - ebiGO - v1.0.0", () => {
     });
 
     it("Validar enviar mensajes opción soporte", () => {
-        cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
+        cy.visit(urlAProbar);
         cy.viewport(1250, 700);
         cy.get('img').should("be.visible");
         cy.get('.mb-1 > .form-control').type("drivas@ebigo.com.gt");
@@ -328,13 +331,10 @@ describe("Conjunto de pruebas para BackOffice - ebiGO - v1.0.0", () => {
         cy.get('.swal2-popup').contains("Se ha enviado su petición");
         cy.get('.swal2-confirm').click();
         cy.get('.nav > :nth-child(1) > .nav-link').click();
-        cy.get(':nth-child(1) > :nth-child(9) > .buttonRowDelete').click();
-        cy.get('#ngb-nav-3').click();
-        cy.get('#ngb-nav-4').click();
     });
 
     it("Validar enviar mensajes opción soporte", () => {
-        cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
+        cy.visit(urlAProbar);
         cy.viewport(1250, 700);
         cy.get('img').should("be.visible");
         cy.get('.mb-1 > .form-control').type("drivas@ebigo.com.gt");
