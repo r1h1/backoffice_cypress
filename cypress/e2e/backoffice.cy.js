@@ -151,9 +151,6 @@ describe("Conjunto de pruebas para BackOffice - ebiGO - v1.0.0", () => {
 
     //CORTESÍAS SE DEBEN PROBAR DE MANERA MANUAL
 
-<<<<<<< HEAD
-    it.only("Validar parqueos", () => {
-=======
     //PRUEBA EN LOS MODULOS DE CORTESÍA
     it("Pruebas de cortesías", () => {
         cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
@@ -189,7 +186,6 @@ describe("Conjunto de pruebas para BackOffice - ebiGO - v1.0.0", () => {
     });
 
     it("Validar módulo parqueo y aplicación de cortesías", () => {
->>>>>>> 7c9315ad771b690a377c78e99699fee259ab6c3d
         //NO TODOS LOS DATOS SE PUEDEN PROBAR PORQUE SE NECESITA INTERACCIÓN HUMANA
         //AGREGANDO DIFERENTES IMÁGENES ETC
         cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
@@ -219,8 +215,6 @@ describe("Conjunto de pruebas para BackOffice - ebiGO - v1.0.0", () => {
         cy.get('.btn-close').click();
     });
 
-<<<<<<< HEAD
-=======
 
     it("Validar Ver parqueos mensuales", () => {
         cy.visit('https://dev.bowtietech.pro/dev/Ebigo/#/');
@@ -362,5 +356,4 @@ describe("Conjunto de pruebas para BackOffice - ebiGO - v1.0.0", () => {
         alert("Pruebas completadas con éxito");
     });
 
->>>>>>> 7c9315ad771b690a377c78e99699fee259ab6c3d
 });
