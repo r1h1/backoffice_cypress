@@ -72,13 +72,8 @@ describe("Conjunto de pruebas para BackOffice - ebiGO - v1.0.0", () => {
         cy.get('.swal2-popup').contains("Datos no válidos o faltantes");
         cy.get('.swal2-confirm').click();
         cy.get('[icon="fas fa-pencil-ruler"] > .animate__animated > .titleCards').click();
-<<<<<<< HEAD
-        cy.get('#new-Nombre').type("Prueba");
-        cy.get('#new-Ubicación').type("Cypress Automatización");
-=======
         cy.get('#new-Nombre').type(prompt("Nombre Local"));
         cy.get('#new-Ubicación').type(prompt("Ubicación Local"));
->>>>>>> 7c9315ad771b690a377c78e99699fee259ab6c3d
         cy.get('.btn').click();
         cy.get(':nth-child(1) > .text-center > .buttonRowEdit').click();
         cy.get('.btn-info').click();
